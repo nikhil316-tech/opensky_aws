@@ -1,0 +1,88 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# ==========================
+# Virtual Environment
+# ==========================
+.venv/
+venv/
+env/
+
+# ==========================
+# Environment Variables
+# ==========================
+.env
+.env.*
+
+# ==========================
+# IDE Settings
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# Jupyter
+# ==========================
+.ipynb_checkpoints/
+
+# ==========================
+# Airflow
+# ==========================
+airflow/logs/
+airflow/plugins/__pycache__/
+airflow/.env
+
+# ==========================
+# Spark Temporary Files
+# ==========================
+spark-warehouse/
+metastore_db/
+derby.log
+
+# ==========================
+# Streaming Checkpoints
+# ==========================
+checkpoints/
+checkpoint/
+tmp_checkpoint/
+
+# ==========================
+# Local Data Files (Optional)
+# Uncomment if not pushing sample data
+# ==========================
+# data/
+# bronze_data/
+# silver_data/
+# gold_data/
+
+# ==========================
+# AWS Credentials
+# ==========================
+.aws/
+credentials
+config
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+
+# ==========================
+# Docker
+# ==========================
+docker-compose.override.yml
