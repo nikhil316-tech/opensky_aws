@@ -16,23 +16,13 @@ default_args = {
 with DAG(
     dag_id="opensky_pipeline",
     default_args=default_args,
-    description="OpenSky micro batch Bronze-Silver-Gold pipeline",
-    schedule=None,
+    description="OpenSky Kinesis to Iceberg micro-batch pipeline",
+    schedule="*/5 * * * *",
     start_date=datetime(2026, 1, 1),
     catchup=False,
     max_active_runs=1,
-    tags=["opensky", "glue", "iceberg"],
+    tags=["opensky", "kinesis", "glue", "iceberg"],
 ) as dag:
-
-    # ----------------------------------------
-    # Bronze
-    # ----------------------------------------
-
-    bronze = GlueJobOperator(
-        task_id="opensky_bronze",
-        job_name="opensky_bronze",
-        wait_for_completion=True,
-    )
 
     # ----------------------------------------
     # Silver
@@ -58,4 +48,4 @@ with DAG(
     # Pipeline dependency
     # ----------------------------------------
 
-    bronze >> silver >> gold
+    silver >> gold
