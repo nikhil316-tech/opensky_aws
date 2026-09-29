@@ -48,7 +48,7 @@ stream_df = glueContext.create_data_frame.from_options(
 )
 
 # Batch Processing
-##########################################################
+################################
 
 def processBatch(data_frame, batchId):
 
@@ -69,7 +69,7 @@ def processBatch(data_frame, batchId):
         .parquet(args["output_path"])
     )
 
-    print(f"Batch {batchId} Written Successfully")
+    print(f"Batch {batchId} Written Success")
 
 ##########################################################
 # Streaming
